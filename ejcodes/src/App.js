@@ -1,7 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
-import Avatar from './Avatar/Avatar'
-import Nav from './Nav/Nav'
+import AboutMe from './AboutMe/AboutMe';
+import Avatar from './Avatar/Avatar';
+import Nav from './Nav/Nav';
+import IntroAnimation from './IntroAnimation/IntroAnimation';
 import './App.css';
 
 function App() {
@@ -9,10 +11,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Avatar/>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <IntroAnimation/>
+        <AboutMe/>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -25,7 +25,7 @@ function App() {
         
       </header>
     </div>
-  );
-}
+  )
+};
 
 export default App;
