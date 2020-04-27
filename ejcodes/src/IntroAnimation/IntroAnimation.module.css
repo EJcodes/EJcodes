@@ -3,6 +3,14 @@
     visibility: hidden;
 }
 
+.growth{
+    visibility: hidden;
+}
+
+.growth2{
+    visibility: hidden;
+}
+
 .passion{
     visibility: hidden;
 }
@@ -14,7 +22,13 @@
     visibility: hidden;
 }
 
+.sun{
+    visibility: hidden;
+}
 
+.moon{
+    visibility: hidden;
+}
 
 .leftMountain{
     visibility: hidden;
