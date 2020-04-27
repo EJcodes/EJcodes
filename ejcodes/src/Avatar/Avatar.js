@@ -4,7 +4,7 @@ import React from 'react';
 const avatar = ( props ) => {
     return (
         <div> 
-            <p>Avatar goes here</p>
+            <p>Evan Jancy</p>
         </div>
     )
 };

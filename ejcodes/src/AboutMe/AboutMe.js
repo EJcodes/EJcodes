@@ -3,7 +3,7 @@ import React from 'react';
 const aboutMe = ( props ) => {
     return (
         <div> 
-            <p>stuff about Evan Jancy Londono</p>
+            <h5>Full Stack Web Developer</h5>
         </div>
     )
 };
