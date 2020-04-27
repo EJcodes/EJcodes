@@ -1,5 +1,9 @@
 import React, { useEffect } from 'react';
 import {gsap} from 'gsap';
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+import IntroAnimationSVG from '../IntroAnimationSVG.svg';
+
+gsap.registerPlugin(MorphSVGPlugin);
 
 function IntroAnimation (props) {
 	const header = React.createRef();
@@ -13,6 +17,7 @@ return(<>
 	<h1 ref={header}>
 		Hello Gsap Animation
 	</h1>
+	
 	</>);
 
 }
