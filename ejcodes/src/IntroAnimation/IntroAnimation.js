@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import styles from './IntroAnimation.module.css';
-import { gsap} from 'gsap';
+import { gsap, TweenMax } from 'gsap';
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 
 
 gsap.registerPlugin(MorphSVGPlugin);
 
-function IntroAnimation (props) {
+function IntroAnimation ( props ) {
 	const header = React.createRef();
 	const mom = React.createRef();
 	const momsHead = React.createRef();
@@ -19,18 +19,18 @@ function IntroAnimation (props) {
 	const growth2 = React.createRef();
 	const grit = React.createRef();
 	const passion = React.createRef();
-	const E = React.createRef();
-	const J = React.createRef();
 	const leftMountain = React.createRef();
 	const centerMountain = React.createRef();
 	const rightMountain = React.createRef();
 	const sun = React.createRef();
 	const moon =React.createRef();
 	const LeftBracket = React.createRef();
+	const E = React.createRef();
+	const J = React.createRef();
 	const RightBracket = React.createRef();
 	const reactLogo = React.createRef();
 	const mongoLogo = React.createRef();
-	const tl = gsap.timeline();
+	const tl = new gsap.timeline();
 	
 	useEffect(()=>{
 		gsap.to(header.current,{color:"#8C0", duration:2});
@@ -43,14 +43,16 @@ function IntroAnimation (props) {
 		gsap.to(kid.current,{scale:.5, x:110, y:-110,  delay:3.5})
 		gsap.to(dad.current,{scale:.5, x:155, y:-164, delay:3.5})
 		gsap.to(dadsHead.current,{y:-164, delay:3.5})
-		gsap.to(momsHead.current,{scale:2.2, x: -145, y:50, delay:3.5})
+		gsap.to(momsHead.current,{scale:2.2, x: -145, y:50, delay:3.5});
+
 		tl.to(dadsHead.current, {morphSVG:sun.current, duration:1, delay:3})
 		.to(dadsHead.current, {morphSVG:moon.current, duration:2},"+=1")
-		.to(dadsHead.current, {morphSVG:passion.current, x:130, y:0, scale:2, duration:2},"+=1")
-		.to(dadsHead.current, {morphSVG:code2.current,x:130, y:0 , scale:2, duration:2},"+=3")
-		.to(dadsHead.current, {morphSVG:reactLogo.current, x:130, y:0, scale:2, duration:2},"+=3")
-		.to(dadsHead.current, {morphSVG:reactLogo.current, x:130, y:0, scale:2, duration:3,rotation: "+=180", repeat:3, transformOrigin:"50% 50%" })
-		// .to(dadsHead.current, {morphSVG:mongoLogo.current, })
+		.to(dadsHead.current, {morphSVG:passion.current, x:130, y:0, scale:2, duration:2},"+=1");
+
+		tl.to(dadsHead.current, {morphSVG:code2.current,x:130, y:0 , scale:2, duration:2, fill:"#F1502F"},"+=3")
+		.to(dadsHead.current, {morphSVG:reactLogo.current, x:130, y:0, scale:2, duration:3,rotation: "+=360", transformOrigin:"50% 50%", fill:"#61DAFB"},"+=5")
+		.to(dadsHead.current, {morphSVG:mongoLogo.current,x:130, y:0, scale:2, rotation:"+=360_ccw", fill:"#4FAA41" });
+	
 		
 		
 		
@@ -256,9 +258,16 @@ C965.45,414.3,965.38,411.22,965.24,408.15z M994.79,452.36c-2.78,4.82-13.5,6.83-2
 c1.45-6.75,2.44-13.6,2.96-20.49c5.74-3.99,11.19-8.37,16.32-13.11c0.9,0.93,1.75,1.86,2.56,2.79v0
 c4.59,4.99,8.22,10.79,10.72,17.09C995.99,445.01,996.14,448.89,994.79,452.36z"/>
 
-<path ref={mongoLogo} id={mongoLogo} className={styles.mongoLogo} d="M14.174.175l1.708 3.208c.37.58.804 1.117 1.3 1.604 1.43 1.43 2.788 2.928 4.008 4.532 2.894 3.8 4.846 8 6.24 12.584a30.94 30.94 0 0 1 1.324 8.54c.14 8.646-2.824 16.07-8.8 22.24-.972.978-2.022 1.876-3.14 2.684-.592 0-.872-.454-1.116-.872-.454-.766-.732-1.64-.872-2.5-.2-1.046-.348-2.092-.28-3.172v-.488C14.488 48.4 13.966.4 14.174.175z" fill="#599636"/>
-<path d="M14.174.07c-.07-.14-.14-.034-.2.034.034.7-.2 1.324-.592 1.92-.4.592-.976 1.046-1.534 1.534-3.1 2.684-5.54 5.926-7.494 9.552-2.6 4.88-3.94 10.1-4.32 15.616C-.15 30.71.652 37.72 1.278 39.74c1.708 5.368 4.776 9.866 8.75 13.77a35.08 35.08 0 0 0 3.1 2.65c.314 0 .348-.28.4-.488a9.57 9.57 0 0 0 .314-1.36l.7-5.228L14.174.07z" fill="#6cac48"/>
-<path d="M15.882 57.69c.07-.8.454-1.464.872-2.126-.4-.174-.732-.52-.976-.906a6.47 6.47 0 0 1-.52-1.15c-.488-1.464-.592-3-.732-4.496v-.906c-.174.14-.2 1.324-.2 1.5-.102 1.58-.312 3.154-.628 4.706-.104.628-.174 1.254-.56 1.812 0 .07 0 .14.034.244.628 1.848.8 3.73.906 5.648v.7c0 .836-.034.66.66.94.28.104.592.14.872.348.2 0 .244-.174.244-.314l-.104-1.15v-3.208c-.034-.56.07-1.116.14-1.64z" fill="#c2bfbf"/>
+<path ref={mongoLogo} id={mongoLogo} className={styles.mongoLogo} d="M965.68,407.91c-0.5-6.53-2.04-12.83-4.18-19c-4.42-13.78-11.52-25.97-21.52-36.47
+c-2.53-2.65-5.34-5.09-7.1-8.39c-1.12-2.09-2.18-4.21-3.26-6.31l-0.69-1.74c-0.12,0.4-0.19,0.54-0.19,0.68
+c-0.09,3.43-2.03,5.76-4.46,7.93c-2.76,2.48-5.33,5.18-7.99,7.77c-2.66,3.51-5.28,6.97-7.93,10.48
+c-2.17,3.99-4.34,7.98-6.51,11.97l-4.35,11.75l-0.13,0.18c-2.39,7.87-3.58,15.95-4.16,24.12c-0.21,2.94,0.01,5.92,0.18,8.88
+c0.16,2.79,0.44,5.58,0.99,8.33c3.59,17.81,12.6,32.28,25.43,44.38c2.15,2.03,4.36,3.88,6.61,5.81c0.38-1.32,0.69-2.63,1.04-3.95
+c0.35-1.31,0.7-2.61,0.94-3.93c-0.24,1.31-0.5,2.62-0.77,3.93l-1.13,3.95l1.01,3.41l0.93,5.3l0.44,5.53
+c0,1.12-0.05,2.25,0.02,3.37c0.02,0.29,0.39,0.55,0.6,0.83l1.88,0.66l1.96,0.76l-0.34-4.91l-0.02-4.84l0.68-7.37l0.49-1.61
+l1.4-2.48c1.73-1.39,3.59-2.65,5.16-4.2c2.85-2.8,5.69-5.64,8.24-8.7c3.31-3.98,6.16-8.32,8.44-12.98
+c1.53-3.11,2.97-6.29,4.16-9.55c1.05-2.87,1.7-5.88,2.53-8.84c0.07-0.21,0.17-0.42,0.22-0.64
+C966.02,424.06,966.3,416.01,965.68,407.91z M933.74,475.24l-1.1-2.4L933.74,475.24l1.61,1.38L933.74,475.24z"/>
 </svg>
 	
 </>);

@@ -1,20 +1,10 @@
-@media (prefers-reduced-motion: no-preference) {
-    .reactLogo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
 
 .mongoLogo{
     visibility: hidden;
+    fill-rule:evenodd;
+    clip-rule:evenodd;
+    fill:#4FAA41;
+    display:inline;
 }
 .reactLogo{
     visibility: hidden;
@@ -66,9 +56,3 @@
 .st2{font-family:'MyriadPro-Regular';}
 .st3{font-size:348.928px;}
 
-/* 
-
-#st0{font-family:'Myriad-Roman';}
-			#st1{font-size:200px;}
-			#st2{font-family:'MyriadPro-Regular';}
-			#st3{font-size:240px;} */
