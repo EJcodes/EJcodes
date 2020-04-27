@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './IntroAnimation.module.css';
 import { gsap} from 'gsap';
-import reactLogo from '../logo.svg'
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 
 
@@ -12,7 +11,6 @@ function IntroAnimation (props) {
 	const mom = React.createRef();
 	const momsHead = React.createRef();
 	const kid = React.createRef();
-	const kidHead = React.createRef();
 	const dad = React.createRef();
 	const dadsHead = React.createRef();
 	const growth= React.createRef();
@@ -31,11 +29,12 @@ function IntroAnimation (props) {
 	const LeftBracket = React.createRef();
 	const RightBracket = React.createRef();
 	const reactLogo = React.createRef();
+	const mongoLogo = React.createRef();
 	const tl = gsap.timeline();
 	
 	useEffect(()=>{
 		gsap.to(header.current,{color:"#8C0", duration:2});
-		gsap.to(mom.current, {morphSVG:leftMountain.current ,duration:2, delay:1.5});
+		gsap.to(mom.current, {morphSVG:leftMountain.current,duration:2, delay:1.5});
 		gsap.to(kid.current, {morphSVG: centerMountain.current, duration:2, delay:1.5});
 		gsap.to(dad.current, {morphSVG:rightMountain.current ,duration:2, delay:1.5});
 		gsap.to(kid.current, {morphSVG: centerMountain.current, duration:2, delay:1.5});
@@ -45,11 +44,13 @@ function IntroAnimation (props) {
 		gsap.to(dad.current,{scale:.5, x:155, y:-164, delay:3.5})
 		gsap.to(dadsHead.current,{y:-164, delay:3.5})
 		gsap.to(momsHead.current,{scale:2.2, x: -145, y:50, delay:3.5})
-		tl.to(dadsHead.current, {morphSVG:sun.current, duration:2, delay:3})
+		tl.to(dadsHead.current, {morphSVG:sun.current, duration:1, delay:3})
 		.to(dadsHead.current, {morphSVG:moon.current, duration:2},"+=1")
 		.to(dadsHead.current, {morphSVG:passion.current, x:130, y:0, scale:2, duration:2},"+=1")
 		.to(dadsHead.current, {morphSVG:code2.current,x:130, y:0 , scale:2, duration:2},"+=3")
 		.to(dadsHead.current, {morphSVG:reactLogo.current, x:130, y:0, scale:2, duration:2},"+=3")
+		.to(dadsHead.current, {morphSVG:reactLogo.current, x:130, y:0, scale:2, duration:3,rotation: "+=180", repeat:3, transformOrigin:"50% 50%" })
+		// .to(dadsHead.current, {morphSVG:mongoLogo.current, })
 		
 		
 		
@@ -60,9 +61,9 @@ function IntroAnimation (props) {
 
 
 return(<>
-	<h1 ref={header}>
-		Purpose, Grit, Passion, Positivity, Growth.
-	</h1>
+	<h3 ref={header}>
+		Creating web apps with passion and positivity.
+	</h3>
 
 
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -255,6 +256,9 @@ C965.45,414.3,965.38,411.22,965.24,408.15z M994.79,452.36c-2.78,4.82-13.5,6.83-2
 c1.45-6.75,2.44-13.6,2.96-20.49c5.74-3.99,11.19-8.37,16.32-13.11c0.9,0.93,1.75,1.86,2.56,2.79v0
 c4.59,4.99,8.22,10.79,10.72,17.09C995.99,445.01,996.14,448.89,994.79,452.36z"/>
 
+<path ref={mongoLogo} id={mongoLogo} className={styles.mongoLogo} d="M14.174.175l1.708 3.208c.37.58.804 1.117 1.3 1.604 1.43 1.43 2.788 2.928 4.008 4.532 2.894 3.8 4.846 8 6.24 12.584a30.94 30.94 0 0 1 1.324 8.54c.14 8.646-2.824 16.07-8.8 22.24-.972.978-2.022 1.876-3.14 2.684-.592 0-.872-.454-1.116-.872-.454-.766-.732-1.64-.872-2.5-.2-1.046-.348-2.092-.28-3.172v-.488C14.488 48.4 13.966.4 14.174.175z" fill="#599636"/>
+<path d="M14.174.07c-.07-.14-.14-.034-.2.034.034.7-.2 1.324-.592 1.92-.4.592-.976 1.046-1.534 1.534-3.1 2.684-5.54 5.926-7.494 9.552-2.6 4.88-3.94 10.1-4.32 15.616C-.15 30.71.652 37.72 1.278 39.74c1.708 5.368 4.776 9.866 8.75 13.77a35.08 35.08 0 0 0 3.1 2.65c.314 0 .348-.28.4-.488a9.57 9.57 0 0 0 .314-1.36l.7-5.228L14.174.07z" fill="#6cac48"/>
+<path d="M15.882 57.69c.07-.8.454-1.464.872-2.126-.4-.174-.732-.52-.976-.906a6.47 6.47 0 0 1-.52-1.15c-.488-1.464-.592-3-.732-4.496v-.906c-.174.14-.2 1.324-.2 1.5-.102 1.58-.312 3.154-.628 4.706-.104.628-.174 1.254-.56 1.812 0 .07 0 .14.034.244.628 1.848.8 3.73.906 5.648v.7c0 .836-.034.66.66.94.28.104.592.14.872.348.2 0 .244-.174.244-.314l-.104-1.15v-3.208c-.034-.56.07-1.116.14-1.64z" fill="#c2bfbf"/>
 </svg>
 	
 </>);

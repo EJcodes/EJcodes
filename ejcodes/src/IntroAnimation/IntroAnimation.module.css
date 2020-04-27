@@ -12,6 +12,10 @@
       transform: rotate(360deg);
     }
   }
+
+.mongoLogo{
+    visibility: hidden;
+}
 .reactLogo{
     visibility: hidden;
 }
