@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import {gsap} from 'gsap';
+
+function IntroAnimation (props) {
+	const header = React.createRef();
+
+	useEffect(()=>{
+		gsap.to(header.current,{color:"#8C0", duration:2})
+	},[header]);
 
 
-const introAnimation = ( props ) => {
-    return(
-        <div>
-            <p>Where the animation happens!</p>
-        </div>
-    )
-};
+return(<>
+	<h1 ref={header}>
+		Hello Gsap Animation
+	</h1>
+	</>);
 
-
-export default introAnimation;
+}
+export default IntroAnimation;
