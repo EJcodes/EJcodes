@@ -1,4 +1,9 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+.E{
+    fill:none;
+    font-size: 200px;
+    font-family: 'Robot-Bold';;
+}
 .mongoLogo{
     visibility: hidden;
     fill-rule:evenodd;
@@ -51,8 +56,11 @@
 .rightMountain{
     visibility: hidden;
 }
-.st0{font-family:'Myriad-Roman';}
-.st1{font-size:232.6187px;}
-.st2{font-family:'MyriadPro-Regular';}
-.st3{font-size:348.928px;}
+/* .E{
+    visibility:hidden;
+}
+.J{
+    visibility:hidden;
+} */
+
 
