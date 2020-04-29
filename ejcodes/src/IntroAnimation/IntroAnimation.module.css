@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
-.E{
-    fill:none;
-    font-size: 200px;
-    font-family: 'Robot-Bold';;
+.EJ{
+    visibility: hidden;       
+}
+.leftBracket{
+    visibility: hidden;
+}
+.rightBracket{
+    visibility: hidden;
 }
 .mongoLogo{
     visibility: hidden;
@@ -56,6 +60,9 @@
 .rightMountain{
     visibility: hidden;
 }
+.c{
+    visibility: hidden;
+}
 /* .E{
     visibility:hidden;
 }
@@ -64,3 +71,22 @@
 } */
 
 
+.c{
+    visibility: hidden;
+}
+
+.o{
+    visibility: hidden;
+}
+
+.d{
+    visibility: hidden;
+}
+
+.e{
+    visibility: hidden;
+}
+
+.s{
+    visibility: hidden;
+}

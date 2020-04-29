@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import styles from './IntroAnimation.module.css';
-import { gsap, TweenMax } from 'gsap';
+import { gsap, TweenMax, Power1 } from 'gsap';
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 
 
@@ -26,7 +26,11 @@ function IntroAnimation ( props ) {
 	const moon =React.createRef();
 	const LeftBracket = React.createRef();
 	const E = React.createRef();
-	const J = React.createRef();
+	const c = React.createRef();
+	const o = React.createRef();
+	const d = React.createRef();
+	const e = React.createRef();
+	const s = React.createRef();
 	const leftBracket = React.createRef();
 	const rightBracket = React.createRef();
 	const reactLogo = React.createRef();
@@ -38,22 +42,45 @@ function IntroAnimation ( props ) {
 		gsap.to(mom.current, {morphSVG:leftMountain.current,duration:2, delay:1.5});
 		gsap.to(kid.current, {morphSVG: centerMountain.current, duration:2, delay:1.5});
 		gsap.to(dad.current, {morphSVG:rightMountain.current ,duration:2, delay:1.5});
-		gsap.to(kid.current, {morphSVG: centerMountain.current, duration:2, delay:1.5});
+		gsap.to(kid.current, {morphSVG: centerMountain.current, duration:1, delay:1.5});
+		gsap.to(dadsHead.current, {morphSVG:sun.current, duration:1, delay:1.5})
+		gsap.to(sun.current, {morphSVG:moon.current, duration:1,delay:2.5})
 		gsap.to(momsHead.current, {morphSVG:code.current, x:-150, y:300, scale:2, duration:2, delay:1.5});
 		gsap.to(mom.current,{scale:.5, x:30, y:-145, delay:3.5})
 		gsap.to(kid.current,{scale:.5, x:110, y:-110,  delay:3.5})
 		gsap.to(dad.current,{scale:.5, x:155, y:-164, delay:3.5})
 		gsap.to(dadsHead.current,{y:-164, delay:3.5})
-		gsap.to(momsHead.current,{scale:2.2, x: -145, y:50, delay:3.5});
+		gsap.to(momsHead.current,{scale:2.2, x: -145, y:50, delay:3.5})
+		gsap.to(leftBracket.current,{opacity:0, ease:Power1.easeIn, scale:1.8, x:-100, y:48,  delay:10 }) 
+		gsap.to(rightBracket.current,{opacity:0, ease:Power1.easeIn,scale:1.8, x:120, y:48, delay:10}) 
+		gsap.to(E.current,{opacity:0, ease:Power1.easeIn, scale:1.8, x:770, y:550, delay:10 }) 
+		gsap.to(c.current,{opacity:0, ease:Power1.easeIn, scale:1.8, x:-28, y:195, delay:10})
+		gsap.to(o.current,{opacity:0, ease:Power1.easeIn, scale:1.8, x:0, y:195, delay:10})
+		gsap.to(d.current,{opacity:0, ease:Power1.easeIn, scale:1.8, x:28, y:195, delay:10})
+		gsap.to(e.current,{opacity:0, ease:Power1.easeIn, scale:1.8, x:56, y:195, delay:10})
+		gsap.to(s.current,{opacity:0, ease:Power1.easeIn, scale:1.8, x:84, y:195, delay:10})
+		
+		tl.to(leftBracket.current,{visibility:"visible", scale:1.8, x:-100, y:48,  delay:3.5 }) 
+		.to(rightBracket.current,{visibility:"visible",scale:1.8, x:120, y:48  }) 
+		.to(E.current,{visibility:"visible", scale:1.8, x:770, y:550, duration:1}) 
+		.to(c.current,{visibility:"visible", scale:1.8, x:-28, y:195, duration:.2})
+		.to(o.current,{visibility:"visible", scale:1.8, x:0, y:195, duration:.2})
+		.to(d.current,{visibility:"visible", scale:1.8, x:28, y:195, duration:.2})
+		.to(e.current,{visibility:"visible", scale:1.8, x:56, y:195, duration:.2})
+		.to(s.current,{visibility:"visible", scale:1.8, x:84, y:195, duration:.2})
 
-		tl.to(dadsHead.current, {morphSVG:sun.current, duration:1, delay:3})
-		.to(dadsHead.current, {morphSVG:moon.current, duration:2},"+=1")
-		.to(dadsHead.current, {morphSVG:passion.current, x:130, y:0, scale:2, duration:2},"+=1");
+		
 
-		tl.to(dadsHead.current, {morphSVG:code2.current,x:130, y:0 , scale:2, duration:2, fill:"#F1502F"},"+=3")
-		.to(dadsHead.current, {morphSVG:reactLogo.current, x:130, y:0, scale:2, duration:3,rotation: "+=360", transformOrigin:"50% 50%", fill:"#61DAFB"},"+=5")
-		.to(dadsHead.current, {morphSVG:mongoLogo.current,x:130, y:0, scale:2, rotation:"+=360_ccw", fill:"#4FAA41" });
-	
+		
+		
+		tl.to(dadsHead.current, {morphSVG:passion.current, x:130, y:0, scale:2, duration:2},"+=1")
+		.to(dadsHead.current, {morphSVG:code2.current,x:130, y:0 , scale:2, duration:2, fill:"#F1502F"},"+=1")
+		.to(dadsHead.current, {morphSVG:reactLogo.current, x:130, y:0, scale:2, duration:2, transformOrigin:"50% 50%", fill:"#61DAFB"},"+=1")
+		.to(dadsHead.current, {morphSVG:reactLogo.current, x:130, y:0, scale:2, duration:4, rotation: "+=540", transformOrigin:"50% 50%", fill:"#61DAFB"},"+=1")
+		.to(dadsHead.current, {morphSVG:mongoLogo.current,x:145, y:0, scale:2, rotation:"+=180", fill:"#4FAA41" })
+		
+		
+
 		
 		
 		
@@ -64,9 +91,9 @@ function IntroAnimation ( props ) {
 
 
 return(<>
-	<h3 ref={header}>
+	{/* <h3 ref={header}>
 		Creating web apps with passion and positivity.
-	</h3>
+	</h3> */}
 
 
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -85,7 +112,7 @@ viewBox="0 0 1920 1080">
 
 
 
-<path ref={rightBracket} id={styles.rightBracket} className="rightBracket" d="M1099.5,435.15v18.57c-5.62,0.15-10.2,1.75-13.74,4.78c-3.54,3.04-5.89,7.18-7.06,12.39
+<path ref={rightBracket} id={styles.rightBracket} className={styles.rightBracket} d="M1099.5,435.15v18.57c-5.62,0.15-10.2,1.75-13.74,4.78c-3.54,3.04-5.89,7.18-7.06,12.39
 c-1.16,5.2-1.79,14.13-1.86,26.82c-0.07,12.69-0.29,21.04-0.65,25.07c-0.65,6.46-1.88,11.62-3.67,15.46
 c-1.79,3.83-4,6.92-6.63,9.23c-2.63,2.31-5.98,4.06-10.07,5.28c-2.78,0.84-7.3,1.25-13.58,1.25h-6.13v-23.05h3.44
 c7.7,0,12.82-1.37,15.33-4.15s3.78-9.04,3.78-18.74c0-18.52,0.34-30.26,1-35.22c1.19-8.22,3.56-14.78,7.11-19.71
@@ -95,7 +122,7 @@ c4.67,1.67,8.54,4.49,11.6,8.44c3.07,3.95,5.05,8.93,5.97,14.93s1.4,15.84,1.48,29.
 c1.17,5.2,3.53,9.3,7.06,12.35C1089.3,433.4,1093.88,435,1099.5,435.15z"/>
 
 
-<path ref={leftBracket} id={styles.leftBracket} className="leftBracket" d="M771,435.15c5.62-0.15,10.2-1.71,13.74-4.71c3.54-3,5.89-7.14,7.06-12.38
+<path ref={leftBracket} id={styles.leftBracket} className={styles.leftBracket} d="M771,435.15c5.62-0.15,10.2-1.71,13.74-4.71c3.54-3,5.89-7.14,7.06-12.38
 c1.17-5.23,1.79-14.2,1.86-26.88c0.07-12.69,0.29-21.04,0.65-25.07c0.65-6.38,1.88-11.51,3.67-15.39c1.79-3.87,4-6.97,6.63-9.29
 c2.63-2.32,5.98-4.08,10.07-5.3c2.78-0.76,7.3-1.14,13.57-1.14h6.14l0,17.29h-3.44c-7.7,0-12.82,1.39-15.33,4.17
 c-2.52,2.77-3.78,8.98-3.78,18.61c0,19.41-0.41,31.67-1.23,36.78c-1.33,7.92-3.61,14.03-6.83,18.33
@@ -104,25 +131,26 @@ c0.59,5.04,2.09,8.56,4.5,10.55c2.41,2.01,7.13,3,14.17,3h3.44l0,23.05h-6.14c-7.15
 c-4.67-1.75-8.54-4.56-11.6-8.47c-3.07-3.91-5.05-8.88-5.97-14.89c-0.91-6.01-1.41-15.84-1.48-29.51
 c-0.07-13.68-0.69-23.13-1.86-28.38c-1.16-5.24-3.52-9.38-7.06-12.42c-3.54-3.04-8.12-4.63-13.74-4.78V435.15z"/>
 
-<rect x="1026.75" y="358.39" class="st0" width="7.69" height="47.73"/>
-<text  ref={E} font-size="200px" transform="matrix(1 0 0 1 823.0898 508)" >EJ</text>
-<rect x="902.17" y="289.22" class="st0" width="2.83" height="0.81"/>
-<path d="M884.79,543.91c-0.7,2.4-2,6-2.75,7.55c-1.45,0.3-5.35,1.2-9.15,1.2c-11.95,0-18.05-7.95-18.05-16.7
+
+<text ref={E} id="E" className={styles.EJ} font-size="200px" transform="matrix(1 0 0 1 823.0898 508)">EJ</text>
+  
+
+<path ref={c} id={styles.c} className={styles.c} d="M884.79,543.91c-0.7,2.4-2,6-2.75,7.55c-1.45,0.3-5.35,1.2-9.15,1.2c-11.95,0-18.05-7.95-18.05-16.7
 c0-10.2,7.75-17.25,18.95-17.25c4.3,0,7.8,0.9,9.45,1.15c0.2,2.25,0.55,5.25,0.95,7.75l-1.55,0.35c-1-3.35-2.2-5.4-4.75-6.45
 c-1.3-0.6-3.35-0.95-5.25-0.95c-8.25,0-12.6,6.1-12.6,14.35c0,9.65,5,15.85,13.1,15.85c5.1,0,7.6-2.35,10.15-7.35L884.79,543.91
 z"/>
-<path d="M906.14,518.71c8.55,0,16.2,6.55,16.2,16.5c0,10.75-7.3,17.45-16.5,17.45c-9.6,0-16.6-7.3-16.6-16.7
+<path ref={o} id={styles.o} className={styles.o} d="M906.14,518.71c8.55,0,16.2,6.55,16.2,16.5c0,10.75-7.3,17.45-16.5,17.45c-9.6,0-16.6-7.3-16.6-16.7
 C889.24,527.01,895.59,518.71,906.14,518.71z M905.14,520.56c-5.6,0-10.7,4.7-10.7,14.05c0,9.3,5.1,16.15,12.2,16.15
 c6.05,0,10.6-4.5,10.6-14.15C917.24,526.11,911.69,520.56,905.14,520.56z"/>
-<path d="M940.84,519.41c7.05,0,11.5,1.4,14.6,4.35c2.45,2.4,4.25,5.9,4.25,10.7c0,5.85-2.4,10.6-6.25,13.5
+<path ref={d} id={styles.d} className={styles.d} d="M940.84,519.41c7.05,0,11.5,1.4,14.6,4.35c2.45,2.4,4.25,5.9,4.25,10.7c0,5.85-2.4,10.6-6.25,13.5
 c-3.8,2.85-8.65,3.95-14.8,3.95h-11.7v-1.4c4.3-0.4,4.5-0.75,4.5-4.85v-19.95c0-4.3-0.6-4.5-4.5-4.9v-1.4H940.84z
 M935.79,545.26c0,3.75,1.6,4.8,5.35,4.8c9,0,13.6-6.15,13.6-14.9c0-5.45-1.85-9.6-5.8-12c-2.3-1.45-5.2-2-8.55-2
 c-2.25,0-3.45,0.3-3.95,0.7c-0.45,0.3-0.65,0.85-0.65,2.8V545.26z"/>
-<path d="M990.24,543.96c-0.3,1.3-1.65,6.45-2.15,7.95h-24.3v-1.4c4.65-0.35,5-0.8,5-4.9v-19.75c0-4.45-0.55-4.7-4.3-5.05v-1.4
+<path ref={e} id={styles.e} className={styles.e} d="M990.24,543.96c-0.3,1.3-1.65,6.45-2.15,7.95h-24.3v-1.4c4.65-0.35,5-0.8,5-4.9v-19.75c0-4.45-0.55-4.7-4.3-5.05v-1.4
 h15.3c4.7,0,6.65-0.05,7.25-0.1c0.05,1.25,0.25,5,0.45,7.65l-1.5,0.25c-0.45-1.7-0.95-2.75-1.5-3.8c-0.8-1.65-1.95-2-4.95-2
 h-4.75c-1.55,0-1.65,0.15-1.65,1.6v11.05h5.55c3.75,0,4-0.75,4.6-4.15h1.55v10.3h-1.55c-0.65-3.6-1.05-4.1-4.65-4.1h-5.5v9.95
 c0,3.5,1.1,3.8,3.6,3.85h4.65c3.05,0,3.55-0.45,4.65-1.75c0.95-1.05,2-3.1,2.7-4.6L990.24,543.96z"/>
-<path d="M1011.09,527.01c-0.85-3.3-2.25-6.55-6.95-6.55c-3.9,0-5.25,2.85-5.25,5.45c0,3.45,2.2,5.2,6.35,7.35
+<path ref={s} id={styles.s} className={styles.s} d="M1011.09,527.01c-0.85-3.3-2.25-6.55-6.95-6.55c-3.9,0-5.25,2.85-5.25,5.45c0,3.45,2.2,5.2,6.35,7.35
 c6,3.1,8.6,5.4,8.6,10.15c0,5.25-4.55,9.25-11,9.25c-3,0-5.6-0.85-7.65-1.65c-0.4-1.4-1-4.8-1.35-7.5l1.55-0.4
 c1,3.35,3.2,7.7,8.4,7.7c3.6,0,5.8-2.5,5.8-5.75c0-3.85-2.05-5.4-6.45-7.8c-5.25-2.85-8.2-5.25-8.2-9.9
 c0-4.45,3.7-8.65,10.3-8.65c2.8,0,5.55,0.75,6.6,0.95c0.2,1.8,0.4,3.8,0.8,7.05L1011.09,527.01z"/>

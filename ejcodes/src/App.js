@@ -11,14 +11,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Avatar/>
+        
         <IntroAnimation/>
         
-        <AboutMe/>
-
-        <Nav/>
-        <ContactMe/>
-        <Projects/>
+        
         
       </header>
     </div>
