@@ -42,7 +42,6 @@ function IntroAnimation ( props ) {
 		gsap.to(mom.current, {morphSVG:leftMountain.current,duration:2, delay:1.5});
 		gsap.to(kid.current, {morphSVG: centerMountain.current, duration:2, delay:1.5});
 		gsap.to(dad.current, {morphSVG:rightMountain.current ,duration:2, delay:1.5});
-		gsap.to(kid.current, {morphSVG: centerMountain.current, duration:1, delay:1.5});
 		gsap.to(dadsHead.current, {morphSVG:sun.current, duration:1, delay:1.5})
 		gsap.to(sun.current, {morphSVG:moon.current, duration:1,delay:2.5})
 		gsap.to(momsHead.current, {morphSVG:code.current, x:-150, y:300, scale:2, duration:2, delay:1.5});
