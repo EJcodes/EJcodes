@@ -24,7 +24,6 @@ function IntroAnimation ( props ) {
 	const rightMountain = React.createRef();
 	const sun = React.createRef();
 	const moon =React.createRef();
-	const LeftBracket = React.createRef();
 	const E = React.createRef();
 	const c = React.createRef();
 	const o = React.createRef();
@@ -35,29 +34,45 @@ function IntroAnimation ( props ) {
 	const rightBracket = React.createRef();
 	const reactLogo = React.createRef();
 	const mongoLogo = React.createRef();
+
+	const leftline = React.createRef();
+	const rightline = React.createRef();
+	const topline = React.createRef();
+	const botrightline = React.createRef();
+	const botleftline = React.createRef();
+	const tableleftline = React.createRef();
+	const tablerightline = React.createRef();
+	const tablebotline = React.createRef();
+
+	
 	const tl = new gsap.timeline();
 	
 	useEffect(()=>{
+		// gsap.to(line.current,{scale:2}) 
 		gsap.to(header.current,{color:"#8C0", duration:2});
-		gsap.to(mom.current, {morphSVG:leftMountain.current,duration:2, delay:1.5});
-		gsap.to(kid.current, {morphSVG: centerMountain.current, duration:2, delay:1.5});
-		gsap.to(dad.current, {morphSVG:rightMountain.current ,duration:2, delay:1.5});
+
+		
+
+
+		gsap.to(mom.current, {morphSVG:leftMountain.current, duration:1, delay:1.5});
+		gsap.to(kid.current, {morphSVG:centerMountain.current, duration:1, delay:1.5});
+		gsap.to(dad.current, {morphSVG:rightMountain.current, duration:1, delay:1.5});
 		gsap.to(dadsHead.current, {morphSVG:sun.current, duration:1, delay:1.5})
 		gsap.to(sun.current, {morphSVG:moon.current, duration:1,delay:2.5})
-		gsap.to(momsHead.current, {morphSVG:code.current, x:-150, y:300, scale:2, duration:2, delay:1.5});
-		gsap.to(mom.current,{scale:.5, x:30, y:-145, delay:3.5})
-		gsap.to(kid.current,{scale:.5, x:110, y:-110,  delay:3.5})
-		gsap.to(dad.current,{scale:.5, x:155, y:-164, delay:3.5})
-		gsap.to(dadsHead.current,{y:-164, delay:3.5})
-		gsap.to(leftBracket.current,{visibility:"visible", scale:1.8, x:-100, y:48, delay:4.9 }) 
-		gsap.to(rightBracket.current,{visibility:"visible",scale:1.8, x:120, y:48, delay:4.9  }) 
-		gsap.to(E.current,{visibility:"visible", scale:1.8, x:770, y:550, duration:1,delay:4.9 }) 
-		gsap.to(momsHead.current,{scale:2.2, x: -145, y:50, delay:3.5})
-		gsap.to(c.current,{visibility:"visible", scale:1.8, x:-28, y:195, duration:.2,delay:4.9})
-		gsap.to(o.current,{visibility:"visible", scale:1.8, x:0, y:195, duration:.2,delay:5})
-		gsap.to(d.current,{visibility:"visible", scale:1.8, x:28, y:195, duration:.2,delay:5.1})
-		gsap.to(e.current,{visibility:"visible", scale:1.8, x:56, y:195, duration:.2,delay:5.2})
-		gsap.to(s.current,{visibility:"visible", scale:1.8, x:84, y:195, duration:.2,delay:5.3})
+		gsap.to(momsHead.current, {morphSVG:code.current, x:-190, y:300, scale:2, duration:2, delay:1.5});
+		gsap.to(mom.current,{scale:.5, x:30, y:-225, delay:3.5})
+		gsap.to(kid.current,{scale:.5, x:110, y:-190,  delay:3.5})
+		gsap.to(dad.current,{scale:.5, x:155, y:-250, delay:3.5})
+		gsap.to(dadsHead.current,{y:-244, delay:3.5})
+		gsap.to(momsHead.current,{scale:2.2, x: -145, y:-50, delay:3.5})
+		gsap.to(leftBracket.current,{visibility:"visible", scale:1.8, x:-100, y:-48, delay:4.9 }) 
+		gsap.to(rightBracket.current,{visibility:"visible",scale:1.8, x:120, y:-48, delay:4.9  }) 
+		gsap.to(E.current,{visibility:"visible", scale:1.8, x:770, y:450, duration:1,delay:4.9 }) 
+		gsap.to(c.current,{visibility:"visible", scale:1.8, x:-28, y:95, duration:.2,delay:4.9})
+		gsap.to(o.current,{visibility:"visible", scale:1.8, x:0, y:95, duration:.2,delay:5})
+		gsap.to(d.current,{visibility:"visible", scale:1.8, x:28, y:95, duration:.2,delay:5.1})
+		gsap.to(e.current,{visibility:"visible", scale:1.8, x:56, y:95, duration:.2,delay:5.2})
+		gsap.to(s.current,{visibility:"visible", scale:1.8, x:84, y:95, duration:.2,delay:5.3})
 		gsap.to(leftBracket.current,{opacity:0, ease:Power1.easeIn, scale:1.8, x:-100, y:48,  delay:8}) 
 		gsap.to(rightBracket.current,{opacity:0, ease:Power1.easeIn,scale:1.8, x:120, y:48, delay:8}) 
 		gsap.to(E.current,{opacity:0, ease:Power1.easeIn, scale:1.8, x:770, y:550, delay:8 }) 
@@ -67,23 +82,11 @@ function IntroAnimation ( props ) {
 		gsap.to(e.current,{opacity:0, ease:Power1.easeIn, scale:1.8, x:56, y:195, delay:8})
 		gsap.to(s.current,{opacity:0, ease:Power1.easeIn, scale:1.8, x:84, y:195, delay:8})
 		
-
-
-		
-
-		
-		
-		tl.to(dadsHead.current, {morphSVG:passion.current, x:130, y:0, scale:2, duration:2, delay:7.5},"+=1")
-		.to(dadsHead.current, {morphSVG:code2.current,x:130, y:0 , scale:2, duration:2, fill:"#F1502F"},"+=1")
-		.to(dadsHead.current, {morphSVG:reactLogo.current, x:130, y:0, scale:2, duration:2, transformOrigin:"50% 50%", fill:"#61DAFB"},"+=1")
-		.to(dadsHead.current, {morphSVG:reactLogo.current, x:130, y:0, scale:2, duration:4, rotation: "+=540", transformOrigin:"50% 50%", fill:"#61DAFB"},"+=1")
-		.to(dadsHead.current, {morphSVG:mongoLogo.current,x:145, y:0, scale:2, rotation:"+=180", fill:"#4FAA41" })
-		
-		
-
-		
-		
-		
+		tl.to(dadsHead.current, {morphSVG:passion.current, x:130, y:-80, scale:2, duration:2, delay:7.5},"+=1")
+		.to(dadsHead.current, {morphSVG:code2.current,x:130, y:-80, scale:2, duration:2, fill:"#F1502F"},"+=1")
+		.to(dadsHead.current, {morphSVG:reactLogo.current, x:130, y:-80, scale:2, duration:2, transformOrigin:"50% 50%", fill:"#61DAFB"},"+=1")
+		.to(dadsHead.current, {morphSVG:reactLogo.current, x:130, y:-80, scale:2, duration:4, rotation: "+=540", transformOrigin:"50% 50%", fill:"#61DAFB"},"+=1")
+		.to(dadsHead.current, {morphSVG:mongoLogo.current,x:145, y:-80, scale:2, rotation:"+=180", fill:"#4FAA41" })
 		
 		},[reactLogo,mom,momsHead, kid, dad, dadsHead,leftMountain, centerMountain, rightMountain, sun, moon, grit, passion, header,code, growth,code2, growth2]);
 
@@ -99,16 +102,14 @@ return(<>
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 viewBox="0 0 1920 1080">
 
-{/* <g id="Layer_2">
-<text transform="matrix(1 0 0 1 947.8193 519.3223)" class="st0 st1">J</text>
-</g>
-<g id="Layer_3">
-<text transform="matrix(0.6892 0 0 1 847.0264 519.8525)" class="st0 st1">E</text>
-</g>
-<g id="Layer_5">
-<text transform="matrix(1 0 0 1 764.8574 542.0547)" class="st2 st3">{</text>
-<text transform="matrix(1 0 0 1 1005.6338 543.3398)" class="st2 st3">}</text>
-</g> */}
+{/* <path ref={leftline} id={styles.leftline} className={styles.leftline} fill="#FFFFFF" stroke="#000000" stroke-width="9" class="st6" d="M433,62c0,135.67,0,271.33,0,407"/>
+<path ref={rightline} id={styles.rightline} className={styles.rightline} fill="#FFFFFF" stroke="#000000" stroke-width="9" class="st6" d="M1478,62c0,137,0,274,0,411"/>
+<path ref={topline} id={styles.topline} className={styles.topline} fill="#FFFFFF" stroke="#000000" stroke-width="9" class="st6" d="M429,66c349.67,0,699.33,0,1049,0"/> */}
+<path ref={botrightline} id={styles.botrightline} className={styles.botrightline} fill="#FFFFFF" stroke="#000000" stroke-width="9" class="st6" d="M1113,469.01c120.33,0,240.67,0,361,0"/>
+<path ref={botleftline} id={styles.botleftline} className={styles.botleftline} fill="#FFFFFF" stroke="#000000" stroke-width="9" class="st6" d="M754,466c-108.33,0-216.67,0-325,0"/>
+{/* <line ref={tablerightline} id={styles.tablerightline} className={styles.tablerightline} fill="#FFFFFF" stroke="#000000" stroke-width="9" class="st6" x1="1261" y1="469" x2="1372" y2="669"/>
+<line ref={tableleftline} id={styles.tableleftline} className={styles.tableleftline} fill="#FFFFFF" stroke="#000000" stroke-width="9" class="st6" x1="652.5" y1="468.75" x2="541.5" y2="668.75"/>
+<path ref={tablebotline} id={styles.tablebotline} className={styles.tablebotline} fill="#FFFFFF" stroke="#000000" stroke-width="9" class="st6" d="M538,671c279.33,0,558.67,0,838,0"/> */}
 
 
 
@@ -269,6 +270,8 @@ c-0.91,0.66-1.75,1.28-2.57,1.84c-1.63,1.14-3.07,2.1-4.26,2.88c-2.39,1.57-3.85,2.
 c0.78-1.21,1.76-2.64,2.91-4.25c1.16-1.61,2.46-3.4,3.87-5.31c1.44-1.92,3-4.01,4.65-6.21
 C944.4,351.39,944.61,351.12,944.82,350.84z"/>
 </g>
+
+
 
 <path ref={code} id={code} className={styles.code} d="M1108.92,296H761.06c-5.01,0-9.06,4.06-9.06,9.06v223.22c0,5.01,4.06,9.06,9.06,9.06h123.52
 c-2.09,12.98-7.09,36.97-17.93,60.65c-0.8,1.74-1.15,3.69-0.78,5.58c0.87,4.49,4.69,7.43,8.91,7.43h119.26

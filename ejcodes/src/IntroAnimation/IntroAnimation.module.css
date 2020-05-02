@@ -2,6 +2,12 @@
 .EJ{
     visibility: hidden;       
 }
+.botleftline{
+    visibility: hidden;
+}
+.leftline{
+    visibility: hidden;
+}
 .leftBracket{
     visibility: hidden;
 }
